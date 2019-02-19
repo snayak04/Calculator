@@ -1,25 +1,39 @@
 import React from 'react';
-import Btns from '../containers/Btns';
+import {Btns, OperatorBtns, Equals, Cancel} from './Btns';
 
-const ButtonList = () => {
+const ButtonList = (props) => {
     
     return(
         <div>
-        <div className="fl w-90">
-            <Btns value="7" />
-            <Btns value="8" />
-            <Btns value="9" />
-            <Btns value="4" />
-            <Btns value="5" />
-            <Btns value="6" />
-            <Btns value="1" />
-            <Btns value="2" />
-            <Btns value="3" />
-            <Btns value="0" />
-            <Btns value="." />
-            <Btns value="&nbsp;" />
+            <div className="fl w-60">
+                <Btns value="7" click={props.clicked}/>
+                <Btns value="8" click={props.clicked}/>
+                <Btns value="9" click={props.clicked}/>
+            
+                <Btns value="4" click={props.clicked}/>
+                <Btns value="5" click={props.clicked}/>
+                <Btns value="6" click={props.clicked}/>
+                <Btns value="1" click={props.clicked}/>
+                <Btns value="2" click={props.clicked}/>
+                <Btns value="3" click={props.clicked}/>
+                <Btns value="0" click={props.clicked}/>
+                <Btns value="." click={props.operator}/>
+                <Btns value="&nbsp;" />
             </div>
-            <div className="fl w-10">
+            <div className="fl w-20">
+                <OperatorBtns value="+" click={props.operator}/>
+                <OperatorBtns value="-" click={props.operator}/>
+                <OperatorBtns value="/" click={props.operator}/>
+                <OperatorBtns value="*" click={props.operator}/>
+            </div>
+            <div className="fl w-20">
+                <OperatorBtns value="&#8730;" click={props.operator}/>
+                <OperatorBtns value="^" click={props.operator}/>
+                <OperatorBtns value="%" click={props.operator}/>
+                <Cancel value="C" click={props.cancel}/>
+            </div>
+            <div className="fl w-100">
+                <Equals value="=" click={props.equal}/>
             </div>
         </div>
     );

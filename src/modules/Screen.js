@@ -1,11 +1,11 @@
 import React from 'react';
 
-const Screen = ({formula}) => {
+const Screen = (props) => {
     return(
-        <div className="pa2 fl w-100">
+        <div className="fl w-100">
             <input type="text" 
-            placeholder="Enter Formula"
-            value={formula}
+            placeholder={props.text}
+            value={props.text}
             className="dib pa3 ma2 bg-light-gray ba2 fl w-100"/>
         </div>
     );
